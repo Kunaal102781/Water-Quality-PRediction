@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Quality Analysis</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.0.0/dist/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Water Quality Analysis</a>
+      <ul class="right hide-on-med-and-down"></ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Water Quality Analysis</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Enter Water Quality Parameters</h5>
+      </div>
+      <div class="row">
+        <form action="/predict" method="post" class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="dissolved_oxygen" name="dissolved_oxygen" type="text" class="validate">
+              <label for="dissolved_oxygen">Dissolved Oxygen (mg/l)</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="ph" name="ph" type="text" class="validate">
+              <label for="ph">pH</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="conductivity" name="conductivity" type="text" class="validate">
+              <label for="conductivity">Conductivity (µmhos/cm)</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="bod" name="bod" type="text" class="validate">
+              <label for="bod">B.O.D. (mg/l)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="nitrate" name="nitrate" type="text" class="validate">
+              <label for="nitrate">Nitrate (mg/l)</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="total_coliform" name="total_coliform" type="text" class="validate">
+              <label for="total_coliform">Total Coliform (MPN/100ml)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="year" name="year" type="text" class="validate">
+              <label for="year">Year</label>
+            </div>
+          </div>
+          <div class="row center">
+            <button type="submit" class="btn-large waves-effect waves-light orange">Predict Water Quality</button>
+          </div>
+        </form>
+      </div>
+      <br>
+      <!-- Display prediction and assessment here -->
+      <h4 align="center"><b>{{ prediction }}</b></h4>
+      <p align="center">{{ assessment }}</p>
+      <br>
+    </div>
+  </div>
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">RVCE</h5>
+          <p class="grey-text text-lighten-4">Electronics and Telecommunication Engineering</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container" style="display: flex; justify-content: center;">
+        EL Sem 5th Submission
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.0.0/dist/js/materialize.min.js"></script>
+</body>
+</html>
